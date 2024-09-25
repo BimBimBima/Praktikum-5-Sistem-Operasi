@@ -4,6 +4,7 @@
 ### a. Edit file profile /etc/profile dan tampilkan pesan sebagai berikut :
  echo “Profile dari /etc/profile”
  Untuk melihat file /etc/profile, kita bisa gunakan command sudo lalu menggunakan command nano untuk mengedit file tersebut.
+
 ![Screenshot 2024-09-25 214401](https://github.com/user-attachments/assets/1007e5cb-d346-463f-bef9-ed3d9422f7f7)
 
 ![Screenshot 2024-09-25 210350](https://github.com/user-attachments/assets/c10cebf2-a0cd-4f2b-8ede-347d167066e9)
@@ -17,6 +18,7 @@ Ganti nama /home/mahasiswa dengan nama anda sendiri. Pada setiap file tersebut, 
 echo “Profile dari .bash_profile”
 
 Lakukan hal yang sama untuk file lainnya, sesuaikan tampilan dengan nama file yang bersangkutan.
+
 ![Screenshot 2024-09-25 215412](https://github.com/user-attachments/assets/fd621bda-48c6-4755-9d2a-dd19cfe846a0)
 
 ![Screenshot 2024-09-25 215314](https://github.com/user-attachments/assets/e40f535a-e4a4-4e5e-96ed-f6610acedcc6)
@@ -55,7 +57,9 @@ Sedangkan, jika menggunakan su - bima, perintah ini tidak hanya mengganti penggu
 ### a.  Edit file .bash_profile, ganti prompt PS1 dengan ‘>’. Instruksi export diperlukan dengan parameter nama variable tersebut, agar perubahan variable PS1 dikenal oleh semua shell
 PS1=‟> „
 export PS1
+
 ![Screenshot 2024-09-25 222630](https://github.com/user-attachments/assets/d9127f83-4274-49a7-a6f4-fd9052d29bdc)
+
 ![Screenshot 2024-09-25 222415](https://github.com/user-attachments/assets/198c1f1f-da51-4f95-a592-c745c63cbc27)
 
 ### b. Eksperimen hasil PS1 :
@@ -65,18 +69,66 @@ Mon Sep 23 > PS1=”\t > “
 10:10:20 > PS1=”Saya=\u > “ 
 Saya=mahasiswa > PS1=”\w >”
 ~ > PS1=\h >”
+
 ![Screenshot 2024-09-25 223421](https://github.com/user-attachments/assets/af4425b0-2053-48c3-9059-5388a12815cb)
 
 ## 3. Logout
 Edit file .bash_logout, tampilkan pesan dan tahan selama 5 detik, sebelum eksekusi logout
+
 Echo “Terima kasih atas sesi yang diberikan” 
+
 Sleep 5
+
 clear
+
 ![Screenshot 2024-09-25 223938](https://github.com/user-attachments/assets/c80f5567-3663-4b30-ba12-1d5f24198fe5)
 ![Screenshot 2024-09-25 223917](https://github.com/user-attachments/assets/aa4f9585-1486-438b-93aa-0c6c722b5a72)
 ![Screenshot 2024-09-25 224300](https://github.com/user-attachments/assets/2b01bc31-05ec-4279-802a-4a8164547b0a)
 
 ## 4. Bash script
+### a.  Buat 3 buah script p1.sh, p2.sh, p3.sh dengan isi masing-masing :
+p1.sh 
 
+#! /bin/bash 
 
+echo “Program p1” 
+
+ls –l 
+
+p2.sh 
+
+#! /bin/bash 
+
+echo “Program p2” 
+
+who 
+
+p3.sh 
+
+#! /bin/bash 
+
+echo “Program p3” 
+
+ps x
+
+![Screenshot 2024-09-25 230045](https://github.com/user-attachments/assets/682226d4-ee4f-486f-94ac-ee24853c2b20)
+
+![Screenshot 2024-09-25 225831](https://github.com/user-attachments/assets/58340f99-b69f-452b-aac9-c335f0dcc917)
+
+![Screenshot 2024-09-25 230050](https://github.com/user-attachments/assets/444d4581-a412-4d80-b25c-907661968344)
+
+![Screenshot 2024-09-25 225911](https://github.com/user-attachments/assets/3d7138c8-e646-4434-93bd-abab636bc5c7)
+
+![Screenshot 2024-09-25 230153](https://github.com/user-attachments/assets/1f252351-7f0e-4b64-bade-f460a337b509)
+
+![Screenshot 2024-09-25 230317](https://github.com/user-attachments/assets/c572b954-95c9-4088-a006-1b051565d68d)
+
+### b.Jalankan script tersebut sebagai berikut :
+$  ./p1.sh ; ./p3.sh ; ./p2.sh 
+
+$  ./p1.sh & $  ./p1.sh 
+
+$ ./p2.sh & ./p3.sh & 
+
+$  ( ./p1.sh ; ./p3.sh ) &
 
