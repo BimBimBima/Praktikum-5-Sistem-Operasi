@@ -132,4 +132,78 @@ $  ./p1.sh $ ./p2.sh & ./p3.sh &
 
 $  ( ./p1.sh ; ./p3.sh ) &
 
+![Screenshot 2024-09-25 232848](https://github.com/user-attachments/assets/9347310b-3116-49fe-89e5-aa0279011c75)
+![Screenshot 2024-09-25 232931](https://github.com/user-attachments/assets/0b866261-83bc-4b9e-84d0-95d299a56867)
+![Screenshot 2024-09-25 233026](https://github.com/user-attachments/assets/cddd9822-834a-492a-b431-3a259aa087ca)
+![Screenshot 2024-09-25 233138](https://github.com/user-attachments/assets/566f9968-a488-4a32-81d7-d8d27546e5bf)
+
+
+## 5. Jobs
+### a. Buat shell-script yang melakukan loop dengan nama pwaktu.sh, setiap 10 detik, kemudian menyimpan tanggal dan jam pada file hasil.
+
+#!/bin/bash 
+while [ true ] 
+do 
+date >> hasil 
+sleep 10 
+done
+
+
+![Screenshot 2024-09-25 235249](https://github.com/user-attachments/assets/fb33c94e-5070-4792-90e6-ed070aeab77d)
+
+![Screenshot 2024-09-25 233730](https://github.com/user-attachments/assets/2b618ee8-093a-4087-b928-5c19c36c7229)
+
+
+### b.  Jalankan sebagai background; kemudian jalankan satu program (utilitas find) di background sebagai berikut :
+$ jobs 
+$ find / -print > files 2>/dev/null & 
+$ jobs
+
+![Screenshot 2024-09-25 235458](https://github.com/user-attachments/assets/fc1fc103-dc37-40b5-b7bf-07c7837e1107)
+
+### c. Jadikan program ke 1 sebagai foreground, tekan ^Z dan kembalikan program tersebut ke background
+$ fg %1 
+$ bg
+
+![Screenshot 2024-09-25 235804](https://github.com/user-attachments/assets/0dc0b4fb-dcc7-4aa2-8a3f-d4c50b0b9663)
+
+### d.  Stop program background dengan utilitas kil
+$ ps x 
+$ kill [Nomor PID]
+
+![Screenshot 2024-09-25 235912](https://github.com/user-attachments/assets/fc39348d-333a-4816-82f1-927cfc58a780)
+
+untuk menjalankan command kill, kita harus mencari nomor PID nya dalam command "ps x"
+
+![Screenshot 2024-09-26 000159](https://github.com/user-attachments/assets/dc0e17de-6fe9-42bf-9444-d6c3239ab6fb)
+
+jika berhasil akan muncul tulisan "Terminated ./pwaktu.sh" seperti gambar dibawah
+![Screenshot 2024-09-26 000233](https://github.com/user-attachments/assets/de403ca5-207f-44db-8350-15a6bc2f9c7c)
+
+## 6. History
+### a. Ganti nilai HISTSIZE dari 1000 menjadi 20
+$ HISTSIZE=20
+$ h
+![Screenshot 2024-09-26 000826](https://github.com/user-attachments/assets/164f4c7d-4fb7-41fe-94a6-8a172008fb71)
+
+### b. Gunakan fasilitas history dengan mengedit instruksi baris ke 5 dari instruksi yang terakhir dilakukan
+$ !-5
+
+![Screenshot 2024-09-26 002055](https://github.com/user-attachments/assets/56145658-dd32-4c75-9ff7-8b3e9dcd05d2)
+
+
+### c. Ulangi instruksi yang terakhir.  Gunakan juga ^P dan ^N untuk bernavigasi pada history bufer
+$ !!
+
+![Screenshot 2024-09-26 002101](https://github.com/user-attachments/assets/288be5f0-89d9-451a-850f-0c321bb56085)
+
+### d.  Ulangi instruksi pada history bufer nomor 150
+$ !150
+
+![Screenshot 2024-09-26 002158](https://github.com/user-attachments/assets/6c2572b7-c6e8-4e9a-8fdc-87c9e9875c4a)
+
+### e.  Ulangi instruksi dengan prefix “ls”
+$ !ls
+
+![Screenshot 2024-09-26 002249](https://github.com/user-attachments/assets/df884a95-cab7-4f5e-9113-731062542ee3)
 
